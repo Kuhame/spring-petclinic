@@ -2,23 +2,26 @@ pipeline {
     agent {
         label "docker-slave"
     }
+    environment {
+        DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1256231536332902492/p0Q79BwJUTDIxpNuDDzE9cRDbF_s-LWvnX5TWYbrfGKOVZH76eR3bQoF_kcjShLmb2Yr"
+    }
 
     stages {
         stage('Checkout') {
             steps {
-                // Cloner le dépôt Git
-                git url: 'https://github.com/Kuhame/spring-petclinic.git', branch: 'main'
+                // Clone the Git repository
+                git url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'main'
             }
         }
         stage('Test') {
             steps {
-                // Exécuter les tests unitaires
+                // Execute unit tests
                 sh './mvnw test'
             }
         }
         stage('Build') {
             steps {
-                // Compiler le projet avec Maven
+                // Compile the project with Maven
                 sh './mvnw package'
             }
         }
@@ -36,16 +39,39 @@ pipeline {
                 }
             }
         }
-
+        stage('Wait for Server') {
+            steps {
+                // Wait for the server to start
+                sleep(time: 30, unit: 'SECONDS')
+            }
+        }
+        stage('Check Homepage') {
+            steps {
+                script {
+                    def response = sh(script: 'curl -o /dev/null -s -w "%{http_code}" http://192.168.33.10:8080', returnStdout: true).trim()
+                    if (response != '200') {
+                        error("Homepage did not return status 200. Actual status: ${response}")
+                    }
+                }
+            }
+        }
     }
     post {
         success {
-            // Actions à effectuer en cas de succès
-            echo 'Build succeeded!'
+            discordSend(
+                webhookURL: DISCORD_WEBHOOK_URL,
+                title: "${env.JOB_NAME} - Jenkins build success",
+                link: env.BUILD_URL,
+                result: "SUCCESS",
+            )
         }
-        failure {
-            // Actions à effectuer en cas d'échec
-            echo 'Build failed!'
+        unsuccessful {
+            discordSend(
+                webhookURL: DISCORD_WEBHOOK_URL,
+                title: "${env.JOB_NAME} - Jenkins build failure",
+                link: env.BUILD_URL,
+                result: "FAILURE"
+            )
         }
     }
 }
