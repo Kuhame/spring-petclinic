@@ -80,7 +80,7 @@ sudo service docker restart
 4. Ensure the Docker API is working:
 
 ```bash
-curl http://192.168.1.30:4243/version
+curl http://192.168.0.30:4243/version
 ```
 
 ### 6. Configure SSH Keys
