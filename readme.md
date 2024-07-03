@@ -172,6 +172,10 @@ cat ~/.ssh/id_rsa
 ![img9](./images/Image9.png)
 ![img10](./images/Image10.png)
 
+### 12. Start the build
+
+![img11](./images/Image11.png)
+
 ## Members
 
 - Frédéric CASIER
