@@ -12,6 +12,7 @@ This project is part of the **ST2DCD DevOps and Continuous Delivery 2023** cours
 ## Prerequisites
 
 - Vagrant installed on your machine
+- VirtualBox installed on your machine (version 7.0.18)
 
 ## Step-by-Step Setup
 
