@@ -25,6 +25,7 @@ vagrant up
 ### 2. Copy Admin Password
 
 Copy the admin password displayed in the console.
+![img1](./images/Image1.png)
 
 ### 3. Set Up Jenkins
 
@@ -135,6 +136,8 @@ sudo docker pull laurenthan/slaveimage
 
 - Password: `Slave2020`
 
+![img2](./images/Image2.png)
+
 #### Create SSH Credentials:
 
 1. Username with private key to connect via SSH to the app server.
@@ -147,17 +150,26 @@ sudo docker pull laurenthan/slaveimage
 cat ~/.ssh/id_rsa
 ```
 
+![img3](./images/Image3.png)
+
 ### 10. Create a New Docker Cloud
 
 1. Add a new Docker agent template in Jenkins.
 
-2. Configure it according to your setup.
+![img4](./images/Image4.png)
+![img5](./images/Image5.png)
+![img6](./images/Image6.png)
+![img7](./images/Image7.png)
+![img8](./images/Image8.png)
 
 ### 11. Create a Pipeline Job
 
 1. In Jenkins, create a new job.
 
 2. Select "Pipeline" and configure the pipeline.
+
+![img9](./images/Image9.png)
+![img10](./images/Image10.png)
 
 ## Members
 
