@@ -12,6 +12,7 @@ This project is part of the **ST2DCD DevOps and Continuous Delivery 2023** cours
 ## Prerequisites
 
 - Vagrant installed on your machine
+- VirtualBox installed on your machine (version 7.0.18)
 
 ## Step-by-Step Setup
 
@@ -171,6 +172,12 @@ cat ~/.ssh/id_rsa
 
 ![img9](./images/Image9.png)
 ![img10](./images/Image10.png)
+
+### 12. Start the build
+
+![img11](./images/Image11.png)
+
+You can now start the app in your browser at http://localhost:8090
 
 ## Members
 
