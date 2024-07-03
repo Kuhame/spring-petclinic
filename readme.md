@@ -177,6 +177,8 @@ cat ~/.ssh/id_rsa
 
 ![img11](./images/Image11.png)
 
+You can now start the app in your browser at http://localhost:8090
+
 ## Members
 
 - Frédéric CASIER
