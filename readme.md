@@ -25,6 +25,7 @@ vagrant up
 ### 2. Copy Admin Password
 
 Copy the admin password displayed in the console.
+
 ![img1](./images/Image1.png)
 
 ### 3. Set Up Jenkins
