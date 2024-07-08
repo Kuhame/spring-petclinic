@@ -179,6 +179,11 @@ cat ~/.ssh/id_rsa
 
 You can now start the app in your browser at http://localhost:8090
 
+### 12. Pipeline Demo
+
+![vidDemo](./images/demoPipeline.mp4)
+
+
 ## Members
 
 - Frédéric CASIER
