@@ -181,8 +181,7 @@ You can now start the app in your browser at http://localhost:8090
 
 ### 12. Pipeline Demo
 
-![vidDemo](./images/demoPipeline.mp4)
-
+https://github.com/Kuhame/spring-petclinic/assets/72671502/e7ce2480-61ed-40c2-bbb3-f17742903295
 
 ## Members
 
